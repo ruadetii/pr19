@@ -5,7 +5,7 @@ namespace Kino_Radosteva.Classes.Common
     public class Connection
     {
         public static readonly string config = "server=localhost;uid=root;database=pr19";
-        public MySqlConnection OpenConnection() 
+        public static MySqlConnection OpenConnection() 
         {
             MySqlConnection connection = new MySqlConnection(config);
             connection.Open();
@@ -13,12 +13,12 @@ namespace Kino_Radosteva.Classes.Common
             return connection;
         }
 
-        public MySqlDataReader Query(string SQL, MySqlConnection connection) 
+        public static MySqlDataReader Query(string SQL, MySqlConnection connection) 
         {
             return new MySqlCommand(SQL, connection).ExecuteReader();
         }
 
-        public void CloseConnection(MySqlConnection connection) 
+        public static void CloseConnection(MySqlConnection connection) 
         {
             connection.Close();
             MySqlConnection.ClearPool(connection);
