@@ -15,14 +15,19 @@ using System.Windows.Shapes;
 
 namespace Kino_Radosteva
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        public static MainWindow init;
         public MainWindow()
         {
             InitializeComponent();
+            OpenPage(new Pages.Kinoteatr.Main());
+            init = this;
+        }
+
+        public void OpenPage(Page page) 
+        {
+            frame.Navigate(page);
         }
     }
 }
