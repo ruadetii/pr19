@@ -29,5 +29,15 @@ namespace Kino_Radosteva
         {
             frame.Navigate(page);
         }
+
+        private void OpenKino(object sender, RoutedEventArgs e)
+        {
+            OpenPage(new Pages.Kinoteatr.Main());
+        }
+
+        private void OpenAfish(object sender, RoutedEventArgs e)
+        {
+            OpenPage(new Pages.Afisha.Main());
+        }
     }
 }
